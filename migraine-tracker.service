@@ -1,0 +1,14 @@
+[Unit]
+Description=Migraine and Medicine Tracking Web Application
+After=network.target
+
+[Service]
+User=migraine-tracker-user
+Group=migraine-tracker-user
+ExecStart=/usr/local/bin/migraine-tracker --port 8400
+WorkingDirectory=/home/migraine-tracker-user
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
